@@ -1952,24 +1952,18 @@ body{
 		border-bottom: 1px solid #e8e8e8;
 		text-align: center;
 		line-height: 28px;
-
-	}
-	aside ul .first{
-		padding-top:  10px;
-		/* box-sizing: border-box; */
-	}
-	aside ul li a{
 		color: #333;
 		font-size: 12px;
-
+	}
+	aside ul li.active{
+		background: #f90;
+		color: #fff;
 	}
 	aside ul li:hover{
 		background: #f90;
 		color: #fff;
 	}
-	aside ul li:hover a{
-		color: #fff;
-	}
+	
 	nav{
 		width: 35px;
 		height: 100%;

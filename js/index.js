@@ -93,4 +93,42 @@ window.onload=function(){
 		})
 		xia[n2].classList.add('xian');
 	}
+
+//楼层跳转 
+	let back=document.querySelector('aside .back');
+	back.onclick=function(){
+		animate(document.body,{scrollTop:0}, 500);
+		animate(document.documentElement,{scrollTop:0}, 500);
+	}
+	let ch=document.documentElement.clientHeight;
+	let nav=document.querySelector('aside');
+	nav.style.display="none";
+	window.onscroll=function(){
+		let fls=document.querySelectorAll('.fl');
+		let navli=document.querySelectorAll('aside li');
+		let tops=document.body.scrollTop? document.body.scrollTop:document.documentElement.scrollTop;
+		let lw=fls[0].offsetTop;
+		if(tops>lw-200){
+			nav.style.display="block";
+		}
+		fls.forEach(function(value,index){
+			if(tops>value.offsetTop-ch+200){
+				navli.forEach(function(v,i){
+					v.classList.remove('active');
+				})
+				navli[index].classList.add('active');
+			}
+		})
+		navli.forEach(function(value,index){
+				let a=fls[index].offsetTop;
+			value.onclick=function(){
+				animate(document.body,{scrollTop:a}, 600)
+				animate(document.documentElement,{scrollTop:a}, 600)
+				navli.forEach(function(v,i){
+					v.classList.remove('active');
+				})
+				value.classList.add('active');
+			}
+		})
+	}
 }
