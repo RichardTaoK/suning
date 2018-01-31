@@ -103,13 +103,31 @@ window.onload=function(){
 	let ch=document.documentElement.clientHeight;
 	let nav=document.querySelector('aside');
 	nav.style.display="none";
+	let flag1=true;
+	let flag2=true;
+	let flag3=true;
 	window.onscroll=function(){
+		if(!flag3){return;}
 		let fls=document.querySelectorAll('.fl');
 		let navli=document.querySelectorAll('aside li');
 		let tops=document.body.scrollTop? document.body.scrollTop:document.documentElement.scrollTop;
 		let lw=fls[0].offsetTop;
+		let sou=document.querySelector('.sousou');
 		if(tops>lw-200){
 			nav.style.display="block";
+		}
+		if(tops>ch*2){
+			if(flag1){
+				flag1=false;
+				animate(sou,{top:0}, 500,function(){
+					flag2=false;
+				})
+			}
+		}else{
+			if(!flag2){
+				flag2=true;
+				animate(sou,{top:-50}, 500,function(){flag1=true})
+			}
 		}
 		fls.forEach(function(value,index){
 			if(tops>value.offsetTop-ch+200){
@@ -120,10 +138,11 @@ window.onload=function(){
 			}
 		})
 		navli.forEach(function(value,index){
-				let a=fls[index].offsetTop;
+			let a=fls[index].offsetTop;
 			value.onclick=function(){
-				animate(document.body,{scrollTop:a}, 600)
-				animate(document.documentElement,{scrollTop:a}, 600)
+				flag3=false;
+				animate(document.body,{scrollTop:a}, 600,function(){flag3=true})
+				animate(document.documentElement,{scrollTop:a}, 600,function(){flag3=true})
 				navli.forEach(function(v,i){
 					v.classList.remove('active');
 				})

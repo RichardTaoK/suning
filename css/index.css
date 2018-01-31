@@ -5,6 +5,109 @@
 body{
 	background: #F2F2F2;
 }
+/* sousuo */
+	.sousou{
+		position: fixed;
+		width: 100%;
+		height: 50px;
+		background: #fff;
+		padding: 5px 0;
+		z-index: 1000;
+		box-sizing: border-box;
+		top: -50px;
+	}
+	.sousou .left{
+		width:163px;
+		height: 38px;
+		background: #FF9900;
+		padding-left: 27px;
+		line-height: 38px;
+		position: relative;
+		float: left;
+	}
+	.sousou .left a{
+		color: #fff;
+		font-weight: 600;
+		font-size: 13px;
+		text-decoration: none;
+	}
+	.sousou .left .iconfont{
+		position: absolute;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		top: 3px;
+		left: 9px;
+		color: #fff;
+		font-size: 13px;
+		font-weight: 800;
+	}
+	.sousou .zhong{
+		/* width: 550px; */
+		height: 40px;
+		/* margin-left: 200px; */
+		margin-right: 40px;
+		float: right;
+		border: 2px solid #FF9900;
+		position: relative;
+		padding-left: 40px;
+		margin-top: -2px;
+	}
+	.sousou .zhong .iconfont{
+		font-size: 13px;
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0 ;
+		width: 25px;
+		height: 40px;
+		line-height: 40px;
+		text-align: right;
+		color: #ccc;
+	}
+	.sousou .search{
+		color: rgb(204, 204, 204);
+		width: 390px;
+		height: 18px;
+		padding: 9px 10px 9px 0;
+		line-height: 18px;
+		font-size: 12px;
+		background: #fff;
+		float: left;
+		border: none;
+	}
+	.sousou .submit{
+		width:120px;
+		height: 40px;
+		font-size: 18px;
+		color: #fff;
+		text-align: center;
+		line-height: 40px;
+		float: left;
+		background: #ff9900;
+		border: none; 
+	}
+	.sousou .right{
+		height: 35px;
+		vertical-align: center;
+		float: right;
+	}
+	.sousou .right a{
+		display: block;
+		line-height: 35px;
+		height: 35px;
+		text-align: center;
+		margin-right: 20px;
+		float: left;
+		font-size: 12px;
+		text-decoration: none;
+	}
+	.sousou .right a .iconfont{
+		margin-right: 10px;
+	}
+	.sousou .right a span{
+		margin-left: 5px;
+	}
 /* header */
 	header{
 		width: 100%;
